@@ -15,12 +15,17 @@
 <body>
   <h1>Sign-up</h1>
   <main>
-    <form action="/" method="get">
+    <form action="/your-name/" method="post">
+    <label for="your_name">Your name: </label>
+    <input id="your_name" type="text" name="your_name" value="{{ current_name }}">
+    <input type="submit" value="OK">
+    </form>
+    <form action="/data_recieve/" method="get">
       <section>
         <h2>PERSONAL DETAILS</h2>
         <ul>
           <li><label for="first-name">First Name</label>
-          <input id="first-name" type="text" name="first-name" required placeholder="eg.sajol" />
+          <input id="first-name" type="text" name="first_name" required placeholder="eg.sajol" />
           
           <label for="last-name">Last Name</label>
             <input id="last-name" type="text" name="last-name" required placeholder="eg.rebello" />

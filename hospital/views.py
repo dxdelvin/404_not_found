@@ -5,4 +5,4 @@ from django.shortcuts import HttpResponse, render
 
 
 def homepage(request):
-    render(request, "template/homepage.html")
+    render(request, "./hospital/templates/login.html")

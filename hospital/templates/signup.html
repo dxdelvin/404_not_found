@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign-up</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../static/styles/style.css">
+</head>
+
+<body>
+  <h1>Sign-up</h1>
+  <main>
+    <form action="/" method="get">
+      <section>
+        <h2>PERSONAL DETAILS</h2>
+        <ul>
+          <li><label for="first-name">First Name</label>
+          <input id="first-name" type="text" name="first-name" required placeholder="eg.sajol" />
+          
+          <label for="last-name">Last Name</label>
+            <input id="last-name" type="text" name="last-name" required placeholder="eg.rebello" />
+          </li>
+          <li> <label for="email">EMAIL</label>
+            <input type="email" name="user-id" id="emailname" required placeholder="example@email.com"/>
+          </li>
+
+          <li>
+            <li><label for="username">Username</label>
+              <input id="username" type="text" name="username" required placeholder="eg.sajolrebello05" />
+          </li>
+          <li>
+            <li><label for="password">Password</label>
+              <input id="password" type="password" name="password" required />
+          </li>
+
+        </ul>
+      </section>
+      <section>
+        
+        <ul>
+          
+          <li>
+            <label for="yourbirthdate">Birth-date</label>
+            <input type="date" name="your-dob" id="yourbirthdate" required />
+          </li>
+       
+        </ul>
+      </section>
+      <section>
+        <ul><li>
+          <label for="height">Height (meters)</label>
+          <input type="number" name="height" id="Height" required step=".05"/>
+        </li>
+        </ul>
+        <ul><li>
+          <label for="Weight">Weight (kgs)</label>
+          <input type="number" name="Weight" id="Weight" required  step=".5" />
+        </li>
+        </ul>
+        <ul>
+          
+          <li>
+            <label for="Number">Address</label>
+            <input type="text" name="your-Address" id="Address" required />
+          </li>
+       
+        </ul>
+        <ul>
+          
+          <li>
+            <label for="Number">Gender</label>
+            <select name="Gender" id="Gender" required>
+              <option value="" selected disabled>NOT SELECTED</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Other">Other</option>
+            </select>
+          </li>
+       
+        </ul>
+        <ul>
+          
+          <li>
+            <label for="Number">Number</label>
+            <input type="tel" name="your-number" id="Number" pattern="[0-9]{10}" required />
+          </li>
+       
+        </ul>
+        <ul>
+          
+        
+          <label>Upload your picture</label>
+             <input type="file" id="myFile" accept="image/png,image/jpeg"/>
+        </ul>
+      </section>
+      
+      <button>Submit</button>
+
+    </form>
+  </main>
+</body>
+
+</html> 

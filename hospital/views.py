@@ -21,7 +21,6 @@ def login(request):
         username = request.POST.get('username')
         password = request.POST.get('password')
         mydata = PersonData.objects.filter(username=username,password=password).values()
-        print(mydata)
         if len(mydata) != 1:
             return HttpResponse("Login Failed")
         else:
@@ -37,7 +36,9 @@ def homepage(request):
 
 def dashboard(request, username):
     template = loader.get_template('dashboard_client.html')
-    context = {}
+    mydata = PersonData.objects.filter(username=username).values()
+    print(mydata[0])
+    context = {"data":mydata[0]}
     return HttpResponse(template.render(context,request))
 
 def saveform(request):

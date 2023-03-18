@@ -1,6 +1,11 @@
+from django import template
+register = template.Library()
+
+
 import os
 import cv2
 import face_recognition
+
 
 def image_capture():
     folder_name = "face_images"
@@ -68,3 +73,5 @@ def image_capture():
     print("Filenames of the collected face images:")
     for filename in face_images:
         print(filename)
+
+

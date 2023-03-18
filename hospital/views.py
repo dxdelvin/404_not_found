@@ -1,10 +1,15 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from django.template import loader
+from django.contrib.auth.decorators import user_passes_test
 # Create your views here.
 from .models import PersonData
+from django.contrib.auth import authenticate, login
 
 
+@user_passes_test(lambda u: u.is_superuser)
+def admin_only_view(request):
+    return render(request, 'admin_only.html')
 
 def signup(request):
     template = loader.get_template('signup.html')
@@ -12,17 +17,28 @@ def signup(request):
     return HttpResponse(template.render(context, request))
 
 def login(request):
-    template = loader.get_template('login.html')
-    context = {}
-    return HttpResponse(template.render(request, context))
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        mydata = PersonData.objects.filter(username=username,password=password).values()
+        print(mydata)
+        if len(mydata) != 1:
+            return HttpResponse("Login Failed")
+        else:
+            return redirect(f'dashboard', username=username)
+    else:
+        return render(request, 'login.html')
 
 
 def homepage(request):
     template = loader.get_template('homepage.html')
-
-
     context = {}
-    return HttpResponse(template.render(request, context))
+    return HttpResponse(template.render(context, request))
+
+def dashboard(request, username):
+    template = loader.get_template('dashboard_client.html')
+    context = {}
+    return HttpResponse(template.render(context,request))
 
 def saveform(request):
     if request.method == "POST":
@@ -46,5 +62,5 @@ def saveform(request):
         cont.save()
 
     template = loader.get_template('upload_success.html')
-    conte = {}
-    return HttpResponse(template.render(request, context=conte))
+    context = {"n":"DATA INSERTED"}
+    return HttpResponse(template.render(context, request))

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Patient Dashboard</title>
+      {%load static%}
+    <link rel="stylesheet" href="{% static '/styles/style2.css' %}">
+  </head>
+  <body>
+    <h1>Welcome to your patient dashboard!</h1>
+
+    <div class="main">
+        <div class="left">
+            <div class="section">
+                <h2 class="section-header">Submit Medical Reports</h2>
+                <form action="/submit_report" method="POST" enctype="multipart/form-data">
+                  <label for="file" class="label">Choose a medical report to upload:</label>
+                  <input type="file" id="file" name="file" accept=".pdf">
+                  <br>
+                  <input type="submit" value="Submit Report">
+                </form>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-header">View Appointments</h2>
+
+            </div>
+        
+        </div>
+        <div class="right">
+            <div class="section">
+                <h1>DELVIN DSOUZA</h1>
+                
+               </div>
+        </div>
+    
+  </body>
+
+</html>

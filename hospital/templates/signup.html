@@ -16,14 +16,7 @@
   <h1>Sign-up</h1>
   <main>
 
-{% block content %}
-  <h1>My Data</h1>
-  <ul>
-    {% for instance in my_data %}
-      <li>{{ instance }}</li>
-    {% endfor %}
-  </ul>
-{% endblock %}
+
     <form enctype="multipart/form-data" action="{%url 'saveform'%}" method="post">
      {% csrf_token %}
       <section>

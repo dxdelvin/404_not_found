@@ -62,6 +62,6 @@ def saveform(request):
                           add_image=add_image)
         cont.save()
 
-    template = loader.get_template('upload_success.html')
+    template = loader.get_template('homepage.html')
     context = {"n":"DATA INSERTED"}
     return HttpResponse(template.render(context, request))

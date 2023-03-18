@@ -9,7 +9,7 @@ class PersonData(models.Model):
     birth_date = models.DateField(default="2003-09-08")
     height = models.FloatField(null=False, default=0)
     weight = models.FloatField(null=False, default=0)
-    password = models.CharField(max_length=20, default="1234")
+    password = models.CharField(max_length=20, default=1234)
     address = models.CharField(max_length=1000)
     gender = models.CharField(max_length=255)
     phone_number = models.IntegerField(null=False, default=0)
